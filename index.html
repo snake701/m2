@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meiyang Accessory | 美洋飾品</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#F9F8F6',  /* 極淺米灰背景 */
+                            100: '#F2EFE9',
+                            200: '#E6DFD5',
+                            300: '#D4C5B5',
+                            400: '#BFA895', /* 香檳金 */
+                            500: '#A68A73',
+                            600: '#8C6F58',
+                            800: '#5C483A',
+                            900: '#3D3026', /* 深褐金 */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                        serif: ['Noto Serif TC', 'serif'], /* 增加襯線體，更有飾品質感 */
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F9F8F6;
+            background-image: linear-gradient(to right, #F2EFE9 1px, transparent 1px),
+                              linear-gradient(to bottom, #F2EFE9 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* 優雅的淡入動畫 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="text-brand-800 min-h-screen flex flex-col items-center selection:bg-brand-200">
+
+    <!-- 手機版面容器 -->
+    <main class="w-full max-w-[480px] min-h-screen bg-white shadow-2xl relative flex flex-col">
+        
+        <!-- 頂部氛圍圖 (Cover) -->
+        <div class="h-56 relative overflow-hidden shrink-0">
+            <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=800&q=80" 
+                 class="w-full h-full object-cover opacity-90" alt="Cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/90"></div>
+        </div>
+
+        <!-- 品牌 Profile 區塊 -->
+        <div class="px-6 -mt-20 relative z-10 text-center animate-fade-in shrink-0">
+            <!-- Logo / 頭像 -->
+            <div class="w-28 h-28 mx-auto rounded-full p-1 bg-white shadow-lg relative">
+                <div class="w-full h-full rounded-full overflow-hidden border border-brand-100 bg-brand-50 flex items-center justify-center">
+                    <!-- 如果有 Logo 圖片，請替換下方 src -->
+                    <span class="font-serif text-3xl text-brand-500 italic">M</span>
+                </div>
+                <!-- 在線狀態小綠點 -->
+                <div class="absolute bottom-2 right-2 w-4 h-4 bg-green-400 border-2 border-white rounded-full"></div>
+            </div>
+            
+            <h1 class="mt-4 text-2xl font-serif font-bold tracking-widest text-brand-900">Meiyang 飾品</h1>
+            <p class="mt-2 text-xs text-brand-500 font-medium tracking-wide uppercase">EST. 2024 | Everyday Luxury</p>
+            
+            <p class="mt-3 text-sm text-brand-600 leading-relaxed font-light">
+                ✨ 點綴日常的小幸運<br>
+                精選純銀飾品｜抗敏醫療鋼｜戒指項鍊<br>
+                讓每個微小的瞬間都閃閃發光
+            </p>
+
+            <!-- 社群連結按鈕 -->
+            <div class="flex justify-center gap-5 mt-6 border-b border-brand-100 pb-6">
+                <a href="https://www.instagram.com/meiyang.16888" target="_blank" class="flex flex-col items-center gap-1 group">
+                    <div class="p-3 bg-brand-50 rounded-full text-brand-600 group-hover:bg-brand-100 group-hover:scale-110 transition-all duration-300">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-[10px] text-brand-400 tracking-wider">IG</span>
+                </a>
+                <a href="#" class="flex flex-col items-center gap-1 group">
+                    <div class="p-3 bg-brand-50 rounded-full text-brand-600 group-hover:bg-brand-100 group-hover:scale-110 transition-all duration-300">
+                        <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-[10px] text-brand-400 tracking-wider">SHOPEE</span>
+                </a>
+                <a href="#" class="flex flex-col items-center gap-1 group">
+                    <div class="p-3 bg-brand-50 rounded-full text-brand-600 group-hover:bg-brand-100 group-hover:scale-110 transition-all duration-300">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-[10px] text-brand-400 tracking-wider">LINE</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 商品展示區塊 (已移除新品 Grid，僅保留重要連結列表) -->
+        <div class="px-5 mt-8 space-y-6 animate-fade-in flex-grow" style="animation-delay: 0.2s;">
+
+            <!-- 主打連結列表 (List Links) -->
+            <section class="space-y-4">
+                <a href="#" class="block p-5 bg-brand-50 rounded-xl border border-transparent hover:border-brand-200 hover:shadow-md transition-all duration-300 group">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-brand-400 group-hover:text-brand-600 transition-colors">
+                                <i data-lucide="gem" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-serif font-bold text-brand-900">蝦皮賣場 Shopee</h3>
+                                <p class="text-xs text-brand-500">全館滿 499 免運優惠中</p>
+                            </div>
+                        </div>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-brand-300 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+                <a href="#" class="block p-5 bg-brand-50 rounded-xl border border-transparent hover:border-brand-200 hover:shadow-md transition-all duration-300 group">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-brand-400 group-hover:text-brand-600 transition-colors">
+                                <i data-lucide="package-check" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-serif font-bold text-brand-900">現貨專區 In Stock</h3>
+                                <p class="text-xs text-brand-500">24H 快速出貨不用等</p>
+                            </div>
+                        </div>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-brand-300 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+                <a href="#" class="block p-5 bg-brand-50 rounded-xl border border-transparent hover:border-brand-200 hover:shadow-md transition-all duration-300 group">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-brand-400 group-hover:text-brand-600 transition-colors">
+                                <i data-lucide="star" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-serif font-bold text-brand-900">好評推薦 Reviews</h3>
+                                <p class="text-xs text-brand-500">看看大家怎麼說</p>
+                            </div>
+                        </div>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-brand-300 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-8 py-8 text-center bg-brand-50 w-full shrink-0">
+            <div class="flex justify-center items-center gap-2 mb-2 opacity-60">
+                <div class="h-[1px] w-8 bg-brand-200"></div>
+                <i data-lucide="sparkle" class="w-3 h-3 text-brand-400"></i>
+                <div class="h-[1px] w-8 bg-brand-200"></div>
+            </div>
+            <p class="text-xs text-brand-400 font-serif tracking-widest">&copy; MEIYANG ACCESSORY</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // 初始化 Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
